@@ -14,6 +14,7 @@ import (
 	"github.com/Beamer64/bb_data/kanye"
 	"github.com/Beamer64/bb_data/pickuplines"
 	"github.com/Beamer64/bb_data/roasts"
+	"github.com/Beamer64/bb_data/tonguetwister"
 	"github.com/Beamer64/bb_data/yomomma"
 )
 
@@ -47,6 +48,9 @@ func Load() error {
 		return err
 	}
 	if err := kanye.Load(FS); err != nil {
+		return err
+	}
+	if err := tonguetwister.Load(FS); err != nil {
 		return err
 	}
 	return nil
