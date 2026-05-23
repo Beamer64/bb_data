@@ -9,12 +9,16 @@ import (
 
 	"github.com/Beamer64/bb_data/affirmations"
 	"github.com/Beamer64/bb_data/eightball"
+	"github.com/Beamer64/bb_data/emojis"
 	"github.com/Beamer64/bb_data/facts"
 	"github.com/Beamer64/bb_data/jokes"
 	"github.com/Beamer64/bb_data/kanye"
+	"github.com/Beamer64/bb_data/loadingmessages"
 	"github.com/Beamer64/bb_data/pickuplines"
 	"github.com/Beamer64/bb_data/roasts"
+	"github.com/Beamer64/bb_data/textfonts"
 	"github.com/Beamer64/bb_data/tonguetwister"
+	"github.com/Beamer64/bb_data/wyr"
 	"github.com/Beamer64/bb_data/yomomma"
 )
 
@@ -51,6 +55,18 @@ func Load() error {
 		return err
 	}
 	if err := tonguetwister.Load(FS); err != nil {
+		return err
+	}
+	if err := wyr.Load(FS); err != nil {
+		return err
+	}
+	if err := emojis.Load(FS); err != nil {
+		return err
+	}
+	if err := textfonts.Load(FS); err != nil {
+		return err
+	}
+	if err := loadingmessages.Load(FS); err != nil {
 		return err
 	}
 	return nil
