@@ -8,6 +8,7 @@ import (
 	"embed"
 
 	"github.com/Beamer64/bb_data/affirmations"
+	"github.com/Beamer64/bb_data/buddie"
 	"github.com/Beamer64/bb_data/eightball"
 	"github.com/Beamer64/bb_data/emojis"
 	"github.com/Beamer64/bb_data/facts"
@@ -67,6 +68,9 @@ func Load() error {
 		return err
 	}
 	if err := loadingmessages.Load(FS); err != nil {
+		return err
+	}
+	if err := buddie.Load(FS); err != nil {
 		return err
 	}
 	return nil

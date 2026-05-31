@@ -1,6 +1,6 @@
 # bb_data
 
-**13 curated datasets for Go programs** — jokes, roasts, facts, Kanye quotes, 8-ball responses, pickup lines, would-you-rathers, and more — embedded into the binary at build time, loaded once at startup, accessed through a tiny per-dataset API. Zero external dependencies.
+**~14 curated datasets for Go programs** — jokes, roasts, facts, Kanye quotes, 8-ball responses, pickup lines, would-you-rathers, plus a small set of embedded images — bundled into the binary at build time, loaded once at startup, accessed through a tiny per-dataset API. Zero external dependencies.
 
 ```
 go get github.com/Beamer64/bb_data
@@ -78,6 +78,7 @@ Most subpackages expose a single `Random()` returning a `string`. The two outlie
 | [`yomomma`](yomomma/) | Yo Mama jokes | `Random() string` |
 | [`wyr`](wyr/) | Would You Rather polls (two options + vote counts) | `Random() Poll`, `Count() int` |
 | [`textfonts`](textfonts/) | ASCII → stylized Unicode (cursive, bubble, leet, flipped, cursed) | `Convert(text, group) string`, `Groups() []string` |
+| [`buddie`](buddie/) | Random embedded "good boy" image (JPEG bytes + filename) | `Random() Image`, `Count() int` |
 
 Shared helpers (random selection plus filesystem readers for plain-text, JSON, JSONL, and CSV fixtures) live under [`internal/pick`](internal/pick/) — not part of the public API, but worth a look if you're curious how the subpackages stay tiny.
 
